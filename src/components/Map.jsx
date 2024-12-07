@@ -9,6 +9,7 @@ import {
 } from "react-leaflet";
 import { useSports } from "../lib/useSports";
 import { useNavigate, useParams, useSearchParams } from "react-router-dom";
+import { useMode } from "../hooks/ModeContext";
 
 function Map() {
   const { sports } = useSports();
@@ -70,11 +71,13 @@ function ChangeCenter({ position }) {
 
 function DetectClick() {
   const navigate = useNavigate();
+
+  const { mode } = useMode();
   {
     useMapEvents({
       click: (e) =>
         navigate(
-          `/app/sports-mode/form?lat=${e.latlng.lat}&lng=${e.latlng.lng}`
+          `/app/${mode}/form?lat=${e.latlng.lat}&lng=${e.latlng.lng}`
         ),
     });
   }

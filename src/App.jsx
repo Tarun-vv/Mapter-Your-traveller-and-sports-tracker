@@ -7,6 +7,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import SportsForm from "./components/SportsForm";
 import { Toaster } from "react-hot-toast";
+import ExplorerForm from "./components/ExplorerForm";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -49,7 +50,7 @@ function App() {
               <Route index element={<Navigate replace to="cities" />} />
               <Route path="cities" element={<CityList />} />
               <Route path="countries" element={<p>Countries</p>} />
-              <Route path="form" element={<p>Form</p>} />
+              <Route path="form" element={<ExplorerForm />} />
             </Route>
             <Route path="sports-mode">
               <Route index element={<SportsList />} />
