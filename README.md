@@ -6,4 +6,4 @@ Mapter is a versatile, location-based tracking app designed for adventurers, tra
 
 ### Features
 
-+ ** Interactive Map Interface **: Utilized Leaflet.js to create a minimalistic yet interactive map UI that works along with React Router to help user fill up forms, see marked locations. The map also moves to respective latitude and longitude position when the user clicks on the item in the list
++ **Interactive Map Interface**: Utilized Leaflet.js to create a minimalistic yet interactive map UI that works along with React Router to help user fill up forms, see marked locations. The map also moves to respective latitude and longitude position when the user clicks on the item in the list
