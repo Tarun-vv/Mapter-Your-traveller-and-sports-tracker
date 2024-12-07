@@ -5,6 +5,7 @@ import CityList from "./components/CityList";
 import SportsList from "./components/SportsList";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import SportsForm from "./components/SportsForm";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -30,7 +31,7 @@ function App() {
             </Route>
             <Route path="sports-mode">
               <Route index element={<SportsList />} />
-              <Route path="form" element={<p>Form sports</p>} />
+              <Route path="form" element={<SportsForm />} />
             </Route>
           </Route>
         </Routes>
