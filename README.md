@@ -4,8 +4,14 @@ Mapter is a versatile, location-based tracking app designed for adventurers, tra
 
 [Live Demo](https://mapter.vercel.app)
 
-### Features
+## Features
 
 + **Interactive Map Interface**: Utilized Leaflet.js to create a minimalistic yet interactive map UI that works along with React Router to help user fill up forms, see marked locations. The map also moves to respective latitude and longitude position when the user clicks on the item in the list
 + **Explorer Specific Tracking**: Under the explorer tab, a user can keep track of the places they have visited. They can keep note of the location as they move around the map, their rating, take some notes and the places they saw there.
 + **Sport Specific Tracking**: Under the sports tab, a user can keep track of the sports you have kept at the location. They can keep note of the location as they move around the map, their rating, take some notes and the places they saw there.
+
+## Tech Stack
+
++ **React**: Build Single Page Application with high user interactivity, React helps simply this process
++ **React Query**: Specialized React library to manage remote state. Used to perform basic CRUD operation (Create , Read, Update and Delete) along with BaaS Supabase.
++ **React Router**: Perform seamless transitions between pages and routes without page reloads. Helped to toggle the user between Explored mode and Sports mode. Allows to easily access query string and params to store latitude and longitude in the URL helping in global state management
