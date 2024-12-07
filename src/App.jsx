@@ -8,6 +8,7 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import SportsForm from "./components/SportsForm";
 import { Toaster } from "react-hot-toast";
 import ExplorerForm from "./components/ExplorerForm";
+import Login from "./components/Login";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -43,7 +44,7 @@ function App() {
       />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Link to="/app">Go to App</Link>} />
+          <Route path="/" element={<Login />} />
           <Route path="/app" element={<AppLayout />}>
             <Route index element={<Navigate replace to="explorer" />} />
             <Route path="explorer" element={<Explorer />}>
