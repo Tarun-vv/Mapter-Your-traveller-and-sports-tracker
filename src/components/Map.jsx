@@ -32,6 +32,10 @@ function Map() {
     [mapLat, mapLng]
   );
 
+  useEffect(() => {
+    
+  }, []);
+
   return (
     <div className="h-full">
       <MapContainer

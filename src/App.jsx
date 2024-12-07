@@ -49,7 +49,6 @@ function App() {
             <Route path="explorer" element={<Explorer />}>
               <Route index element={<Navigate replace to="cities" />} />
               <Route path="cities" element={<CityList />} />
-              <Route path="countries" element={<p>Countries</p>} />
               <Route path="form" element={<ExplorerForm />} />
             </Route>
             <Route path="sports-mode">

@@ -131,8 +131,18 @@ function SportsForm() {
         />
 
         {/* hidden input */}
-        <input value={lat} {...register("lat")} disabled={isLoading} />
-        <input value={lng} {...register("lng")} disabled={isLoading} />
+        <input
+          value={lat}
+          type="hidden"
+          {...register("lat")}
+          disabled={isLoading}
+        />
+        <input
+          value={lng}
+          type="hidden"
+          {...register("lng")}
+          disabled={isLoading}
+        />
       </div>
       <div className="flex justify-between">
         <Link
