@@ -9,11 +9,18 @@ function CityList() {
     <ul className="flex flex-col gap-5 overflow-auto h-[400px]">
       {cities?.map((city) => (
         <li
-          className="px-6 py-3 bg-slate-300 hover:cursor-pointer"
+          className="px-6 py-3 bg-stone-100 hover:cursor-pointer"
           key={city.id}
         >
-          {city.location}
-          <span>{city.rate}</span>
+          <p className="text-lg font-semibold">{city.location}</p>
+          <ul>
+            <li>
+              Your rating:{" "}
+              {city.rate.slice(0, 1).toUpperCase() + city.rate.slice(1)}
+            </li>
+            <li>Places you visited: {city.places}</li>
+            <li>Notes: {city.notes}</li>
+          </ul>
         </li>
       ))}
     </ul>

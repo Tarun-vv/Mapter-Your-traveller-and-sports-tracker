@@ -43,7 +43,7 @@ function App() {
       />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Link to="/app">Go to App shakala makka aeh eh eh e</Link>} />
+          <Route path="/" element={<Link to="/app">Go to App</Link>} />
           <Route path="/app" element={<AppLayout />}>
             <Route index element={<Navigate replace to="explorer" />} />
             <Route path="explorer" element={<Explorer />}>

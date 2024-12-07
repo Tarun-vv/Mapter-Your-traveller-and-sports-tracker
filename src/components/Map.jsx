@@ -10,9 +10,11 @@ import {
 import { useSports } from "../lib/useSports";
 import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { useMode } from "../hooks/ModeContext";
+import { useCities } from "../lib/useCities";
 
 function Map() {
   const { sports } = useSports();
+  const { cities } = useCities();
 
   const [searchParams, setSearchParams] = useSearchParams();
   const mapLat = searchParams.get("lat");
@@ -56,6 +58,13 @@ function Map() {
             </Popup>
           </Marker>
         ))}
+        {cities?.map((city) => (
+          <Marker position={[city.lat, city.lng]} key={city.id}>
+            <Popup>
+              <span className="text-lg">{city.location}</span>
+            </Popup>
+          </Marker>
+        ))}
         <ChangeCenter position={mapPosition} />
         <DetectClick />
       </MapContainer>
@@ -76,9 +85,7 @@ function DetectClick() {
   {
     useMapEvents({
       click: (e) =>
-        navigate(
-          `/app/${mode}/form?lat=${e.latlng.lat}&lng=${e.latlng.lng}`
-        ),
+        navigate(`/app/${mode}/form?lat=${e.latlng.lat}&lng=${e.latlng.lng}`),
     });
   }
 }
