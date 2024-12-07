@@ -51,3 +51,11 @@ export async function addCity(newCity) {
 
   return data;
 }
+
+export async function deleteCity(id) {
+  const { data, error } = await supabase.from("explorer").delete().eq("id", id);
+
+  if (error) throw new Error("City could not be deleted");
+
+  return data;
+}
