@@ -3,3 +3,15 @@
 @tailwind utilities;
 
 @import "https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap";
+
+.nav-link {
+  background-color: #f1f5f9;
+}
+
+.nav-link:hover {
+  background-color: #cbd5e1;
+}
+
+.nav-link.active {
+  background-color: #cbd5e1;
+}

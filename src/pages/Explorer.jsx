@@ -1,24 +1,24 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 
 function Explorer() {
   return (
     <div>
-      <ul className="flex mb-10">
+      <ul className="flex justify-center mb-10">
         <li>
-          <Link
+          <NavLink
             to="cities"
-            className="px-6 py-1 bg-slate-100 hover:bg-slate-300 hover:cursor-pointer text-lg"
+            className="px-6 py-1 text-lg nav-link hover:cursor-pointer"
           >
             Cities
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link
+          <NavLink
             to="countries"
-            className="px-6 py-1 bg-slate-100 hover:bg-slate-300 hover:cursor-pointer text-lg"
+            className="px-6 py-1 text-lg nav-link hover:cursor-pointer"
           >
             Countries
-          </Link>
+          </NavLink>
         </li>
       </ul>
       <Outlet />

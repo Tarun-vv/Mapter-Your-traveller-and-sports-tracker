@@ -1,25 +1,41 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
   MapContainer,
   Marker,
   Popup,
   TileLayer,
+  useMap,
   useMapEvents,
 } from "react-leaflet";
-import { getSports } from "../lib/data-service";
 import { useSports } from "../lib/useSports";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 
 function Map() {
   const { sports } = useSports();
 
+  const [searchParams, setSearchParams] = useSearchParams();
+  const mapLat = searchParams.get("lat");
+  const mapLng = searchParams.get("lng");
+
+  const [mapPosition, setMapPosition] = useState([40, 0]);
+
+  const params = useParams();
+  console.log(params);
+
+  useEffect(
+    function () {
+      if (mapLat && mapLng) setMapPosition([mapLat, mapLng]);
+    },
+    [mapLat, mapLng]
+  );
+
   return (
     <div className="h-full">
       <MapContainer
-        center={[40, 0]}
+        center={mapPosition}
         zoom={6}
         scrollWheelZoom={true}
-        className="h-full w-full"
+        className="w-full h-full"
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -39,16 +55,28 @@ function Map() {
             </Popup>
           </Marker>
         ))}
+        <ChangeCenter position={mapPosition} />
         <DetectClick />
       </MapContainer>
     </div>
   );
 }
 
+function ChangeCenter({ position }) {
+  const map = useMap();
+  map.setView(position);
+  return null;
+}
+
 function DetectClick() {
   const navigate = useNavigate();
   {
-    useMapEvents({ click: (e) => navigate("/app/sports-mode/form") });
+    useMapEvents({
+      click: (e) =>
+        navigate(
+          `/app/sports-mode/form?lat=${e.latlng.lat}&lng=${e.latlng.lng}`
+        ),
+    });
   }
 }
 

@@ -2,11 +2,11 @@ import { Link, NavLink } from "react-router-dom";
 
 function AppNav() {
   return (
-    <ul className="flex mb-14">
+    <ul className="flex justify-center mb-14">
       <li>
         <NavLink
           to="explorer"
-          className="px-6 py-1 bg-slate-100 hover:bg-slate-300 hover:cursor-pointer text-xl"
+          className="px-6 py-1 text-xl nav-link hover:cursor-pointer"
         >
           🧳 Explorer mode
         </NavLink>
@@ -14,7 +14,7 @@ function AppNav() {
       <li>
         <NavLink
           to="sports-mode"
-          className="px-6 py-1 bg-slate-100 hover:bg-slate-300 hover:cursor-pointer text-xl"
+          className="px-6 py-1 text-xl nav-link hover:cursor-pointer"
         >
           🏃‍♂️ Sports mode
         </NavLink>
