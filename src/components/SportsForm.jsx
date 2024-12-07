@@ -6,7 +6,7 @@ import { useAddSport } from "../lib/useAddSport";
 function SportsForm() {
   const navigate = useNavigate();
 
-  const { register, handleSubmit, reset, formState } = useForm();
+  const { register, handleSubmit, reset, formState, setValue } = useForm();
   const { addSport, isLoading } = useAddSport();
   function onSubmit(formData) {
     console.log(formData);
@@ -21,6 +21,7 @@ function SportsForm() {
   const lat = searchParams.get("lat");
   const lng = searchParams.get("lng");
 
+  console.log(lat, lng);
   // reverse geocoding
   const BASE_URL = "https://api.bigdatacloud.net/data/reverse-geocode";
   const API_KEY = "bdc_c8c8afbef0934aebb421402fa3dfb4af";
@@ -31,18 +32,24 @@ function SportsForm() {
 
   useEffect(
     function () {
+      if (!lat && !lng) return;
+
       async function fetchCityData() {
         const res = await fetch(
           `${BASE_URL}?latitude=${lat}&longitude=${lng}&key=${API_KEY}`
         );
         const data = await res.json();
-        console.log(data);
+
         setCityName(data.locality);
         setCountryCode(data.countryCode);
+
+        setValue("location", data.locality);
+        setValue("lat", lat);
+        setValue("lng", lng);
       }
       fetchCityData();
     },
-    [lat, lng]
+    [lat, lng, setValue]
   );
 
   if (!countryCode) return <p>👋 There is no city here. Try somewhere else</p>;
@@ -124,8 +131,8 @@ function SportsForm() {
         />
 
         {/* hidden input */}
-        <input type="hidden" value={lat} {...register("lat")} />
-        <input type="hidden" value={lng} {...register("lng")} />
+        <input value={lat} {...register("lat")} disabled={isLoading} />
+        <input value={lng} {...register("lng")} disabled={isLoading} />
       </div>
       <div className="flex justify-between">
         <Link

@@ -12,6 +12,8 @@ function CityList() {
 
   if (isLoading) return <p>Loading cities...</p>;
 
+  if (!cities.length) return <p>👋 Start by clicking on the map</p>;
+
   return (
     <ul className="flex flex-col gap-5 overflow-auto h-[400px]">
       {cities?.map((city) => (

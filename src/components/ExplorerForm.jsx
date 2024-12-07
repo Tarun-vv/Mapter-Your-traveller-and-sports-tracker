@@ -6,7 +6,7 @@ import { useAddCity } from "../lib/useAddCity";
 function ExplorerForm() {
   const navigate = useNavigate();
 
-  const { register, handleSubmit, reset, formState } = useForm();
+  const { register, handleSubmit, reset, formState, setValue } = useForm();
 
   const { addCity, isLoading } = useAddCity();
   function onSubmit(formData) {
@@ -39,10 +39,14 @@ function ExplorerForm() {
         console.log(data);
         setCityName(data.locality);
         setCountryCode(data.countryCode);
+
+        setValue("location", data.locality);
+        setValue("lat", lat);
+        setValue("lng", lng);
       }
       fetchCityData();
     },
-    [lat, lng]
+    [lat, lng, setValue]
   );
 
   if (!countryCode) return <p>👋 There is no city here. Try somewhere else</p>;
