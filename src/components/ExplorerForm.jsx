@@ -17,7 +17,7 @@ function ExplorerForm() {
   // error handling
   const { errors } = formState;
 
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
   const lat = searchParams.get("lat");
   const lng = searchParams.get("lng");
 
