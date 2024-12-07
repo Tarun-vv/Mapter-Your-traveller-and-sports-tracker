@@ -65,7 +65,7 @@ function SportsList() {
           </button>
         </div>
       </div>
-      <ul className="bg-stone-100 flex flex-col gap-5 p-5 overflow-auto h-[450px]">
+      <ul className="bg-stone-100 flex flex-col gap-5 p-5 overflow-auto h-[400px]">
         {filterCabins?.map((sport) => (
           <li
             className={`${

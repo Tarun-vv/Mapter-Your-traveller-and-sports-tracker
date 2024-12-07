@@ -5,7 +5,7 @@ function AppNav() {
   const { handleExplorer, handleSportsMode } = useMode();
 
   return (
-    <ul className="flex justify-center mb-14">
+    <ul className="flex justify-center mb-10">
       <li>
         <NavLink
           to="explorer"
