@@ -12,7 +12,7 @@ import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { useMode } from "../hooks/ModeContext";
 import { useCities } from "../lib/useCities";
 
-function Map() {
+function SportsMap() {
   const { sports } = useSports();
   const { cities } = useCities();
 
@@ -46,14 +46,27 @@ function Map() {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-
-        {cities?.map((city) => (
+        {sports?.map((sport) => (
+          <Marker position={[sport.lat, sport.lng]} key={sport.id}>
+            <Popup>
+              <span className="text-lg">
+                {sport.sport === "Swimming"
+                  ? "🏊‍♂️"
+                  : sport.sport === "Running"
+                  ? "🏃‍♂️"
+                  : "🚴"}{" "}
+                <span className="font-bold">{sport.distance}</span> miles
+              </span>
+            </Popup>
+          </Marker>
+        ))}
+        {/* {cities?.map((city) => (
           <Marker position={[city.lat, city.lng]} key={city.id}>
             <Popup>
               <span className="text-lg">{city.location}</span>
             </Popup>
           </Marker>
-        ))}
+        ))} */}
         <ChangeCenter position={mapPosition} />
         <DetectClick />
       </MapContainer>
@@ -79,4 +92,4 @@ function DetectClick() {
   }
 }
 
-export default Map;
+export default SportsMap;
