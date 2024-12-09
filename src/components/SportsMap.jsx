@@ -38,7 +38,7 @@ function SportsMap() {
     <div className="h-full">
       <MapContainer
         center={mapPosition}
-        zoom={6}
+        zoom={3}
         scrollWheelZoom={true}
         className="w-full h-full"
       >

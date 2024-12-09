@@ -38,7 +38,7 @@ function Map() {
     <div className="h-full">
       <MapContainer
         center={mapPosition}
-        zoom={6}
+        zoom={2}
         scrollWheelZoom={true}
         className="w-full h-full"
       >
