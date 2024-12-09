@@ -5,11 +5,11 @@ function AppNav() {
   const { handleExplorer, handleSportsMode } = useMode();
 
   return (
-    <ul className="flex justify-center mb-10">
+    <ul className="justify-center mb-10 lg:flex-row sm:gap-3 sm:flex-col lg:flex">
       <li>
         <NavLink
           to="explorer"
-          className="px-6 py-1 text-xl nav-link hover:cursor-pointer"
+          className="px-6 py-1 lg:text-xl nav-link hover:cursor-pointer md:text-lg"
           onClick={handleExplorer}
         >
           🧳 Explorer mode
@@ -18,7 +18,7 @@ function AppNav() {
       <li>
         <NavLink
           to="sports-mode"
-          className="px-6 py-1 text-xl nav-link hover:cursor-pointer"
+          className="px-6 py-1 lg:text-xl nav-link hover:cursor-pointer md:text-lg"
           onClick={handleSportsMode}
         >
           🏃‍♂️ Sports mode

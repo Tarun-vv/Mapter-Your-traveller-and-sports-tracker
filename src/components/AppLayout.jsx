@@ -16,7 +16,7 @@ function AppLayout() {
   return (
     <div
       className={`grid  ${
-        isOpen ? "grid-cols-[550px_1fr]" : "grid-cols-[auto_1fr]"
+        isOpen ? "lg:grid-cols-[550px_1fr] md:grid-cols-[440px_1fr] sm:grid-cols-[300px_1fr]" : "grid-cols-[auto_1fr]"
       } h-screen`}
     >
       {isOpen ? (

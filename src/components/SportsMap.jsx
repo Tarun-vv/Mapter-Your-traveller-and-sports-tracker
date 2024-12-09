@@ -35,7 +35,7 @@ function SportsMap() {
   useEffect(() => {}, []);
 
   return (
-    <div className="h-full">
+    <div className="h-full p-2">
       <MapContainer
         center={mapPosition}
         zoom={3}

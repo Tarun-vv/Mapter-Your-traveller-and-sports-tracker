@@ -18,18 +18,20 @@ function CityList() {
     <ul className="flex flex-col gap-5 overflow-auto h-[400px]">
       {cities?.map((city) => (
         <li
-          className="relative px-6 py-3 bg-stone-100 hover:cursor-pointer"
+          className="relative px-6 py-3 bg-stone-100 hover:cursor-pointer "
           key={city.id}
           onClick={() => navigate(`?lat=${city.lat}&lng=${city.lng}`)}
         >
-          <p className="text-lg font-semibold">{city.location}</p>
+          <p className="font-semibold lg:text-lg md:text-md sm:text-sm">{city.location}</p>
           <ul>
-            <li>
+            <li className="lg:text-md md:text-sm sm:text-xs">
               Your rating:{" "}
               {city.rate.slice(0, 1).toUpperCase() + city.rate.slice(1)}
             </li>
-            <li>Places you visited: {city.places}</li>
-            <li>Notes: {city.notes}</li>
+            <li className="lg:text-md md:text-sm sm:text-xs">
+              Places you visited: {city.places}
+            </li>
+            <li className="lg:text-md md:text-sm sm:text-xs">Notes: {city.notes}</li>
           </ul>
           <button
             className="absolute p-2 rounded-full top-3 right-3 bg-slate-200 hover:bg-slate-300"
