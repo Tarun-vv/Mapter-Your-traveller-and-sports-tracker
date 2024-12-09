@@ -3,11 +3,17 @@ import AppNav from "./AppNav";
 import Footer from "./Footer";
 import Logo from "./Logo";
 
-function Sidebar() {
+import { IoChevronBack } from "react-icons/io5";
+
+function Sidebar({ onOpen }) {
   return (
     <div className="flex flex-col justify-between p-4 ">
       <div>
-        <Logo />
+        <div className="flex items-center justify-between mb-8">
+          <Logo />
+          <IoChevronBack className="text-2xl" onClick={onOpen} />
+        </div>
+
         <AppNav />
         <Outlet />
       </div>
