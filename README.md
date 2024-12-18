@@ -1,10 +1,9 @@
 # Mapter // Your traveller and sports tracker
 
+Mapter is a versatile, location-based tracking app designed for adventurers, travelers, and athletes. It helps users log the places they visit and their sports activities, all while providing an interactive map interface. Whether you’re exploring new destinations, cycling through scenic routes, or running laps in your local park, Mapter offers an intuitive way to document and analyze your journey.
 
 <img width="1278" alt="Screenshot 2024-12-18 at 4 14 57 PM" src="https://github.com/user-attachments/assets/e148eed5-c114-4025-8e41-ec53c310e6a4" />
 
-
-Mapter is a versatile, location-based tracking app designed for adventurers, travelers, and athletes. It helps users log the places they visit and their sports activities, all while providing an interactive map interface. Whether you’re exploring new destinations, cycling through scenic routes, or running laps in your local park, Mapter offers an intuitive way to document and analyze your journey.
 
 [Live App](https://mapter.vercel.app) 
 [Watch a demo](https://www.youtube.com/watch?v=N38Im1epbpQ)
